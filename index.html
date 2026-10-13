@@ -94,6 +94,7 @@
     }
     .js .reveal.show { animation-play-state: running; }
     .js .reveal.settled { animation: none; opacity: 1; transform: none; }
+    .js .hero-card.reveal.settled { animation: hero-glow 4.5s ease-in-out infinite; }
     @keyframes rise-in {
       from { opacity: 0; transform: translateY(36px) scale(.97); }
       to { opacity: 1; transform: translateY(0) scale(1); }
@@ -306,7 +307,7 @@
   </style>
 </head>
 <body class="relative min-h-screen overflow-x-hidden antialiased" data-ca="TBA">
-  <div class="pointer-events-none fixed inset-0 -z-20">
+  <div class="pointer-events-none fixed inset-0 -z-20 overflow-hidden">
     <img src="sea-bg.jpg" alt="" class="sea-drift h-full w-full object-cover">
   </div>
   <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
@@ -333,7 +334,7 @@
         <ellipse cx="38" cy="86" rx="22" ry="9" fill="#c5d2de" transform="rotate(-28 38 86)"></ellipse>
         <ellipse cx="34" cy="70" rx="20" ry="8" fill="#d5e0ea" transform="rotate(24 34 70)"></ellipse>
       </g>
-      <ellipse cx="128" cy="84" rx="78" ry="36" fill="#e7eef4"></ellipse>
+      <ellipse cx="128" cy="84" rx="78" ry="36" fill="#f4f8fb" stroke="#063a7a" stroke-width="4"></ellipse>
       <ellipse cx="136" cy="96" rx="52" ry="18" fill="#f7fbfe"></ellipse>
       <g class="jacket">
         <rect x="86" y="62" width="64" height="50" rx="18" fill="#ff2d8a"></rect>
@@ -344,7 +345,7 @@
         <ellipse cx="104" cy="116" rx="28" ry="10" fill="#c9d5e0" transform="rotate(16 104 116)"></ellipse>
       </g>
       <ellipse cx="186" cy="42" rx="8" ry="6" fill="#e7eef4"></ellipse>
-      <ellipse cx="198" cy="68" rx="40" ry="32" fill="#f2f6f9"></ellipse>
+      <ellipse cx="198" cy="68" rx="40" ry="32" fill="#f7fbfe" stroke="#063a7a" stroke-width="4"></ellipse>
       <ellipse cx="228" cy="78" rx="20" ry="14" fill="#d9e2ea"></ellipse>
       <ellipse cx="244" cy="74" rx="6.5" ry="4.5" fill="#243042"></ellipse>
       <circle cx="208" cy="58" r="9" fill="#1b2430"></circle>
@@ -394,9 +395,9 @@
     </nav>
   </header>
 
-  <main id="top" class="relative z-10">
+  <main id="top">
     <section class="mx-auto max-w-6xl px-4 py-8 sm:py-12">
-      <div class="hero-card reveal rounded-[2rem] border border-white bg-white/85 p-5 shadow-[0_30px_80px_rgba(4,36,90,0.28)] backdrop-blur-md sm:p-8 lg:p-10">
+      <div class="hero-card reveal relative z-10 rounded-[2rem] border border-white bg-white/85 p-5 shadow-[0_30px_80px_rgba(4,36,90,0.28)] backdrop-blur-md sm:p-8 lg:p-10">
         <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
           <div>
             <div class="flex items-center gap-4">
@@ -469,7 +470,7 @@
       </div>
     </section>
 
-    <div class="overflow-hidden bg-deep text-white">
+    <div class="relative z-10 overflow-hidden bg-deep text-white">
       <div class="marquee flex w-max">
         <p class="flex shrink-0 items-center gap-8 px-4 py-3 font-display text-lg tracking-wide">
           <span class="ticker-glow">$SEALS</span><span class="beat text-blush">●</span>
@@ -496,7 +497,7 @@
     </div>
 
     <section id="story" class="scroll-mt-28 mx-auto max-w-6xl px-4 py-8 sm:py-12">
-      <div class="reveal relative overflow-hidden rounded-[2rem] border border-white bg-white/85 p-6 shadow-[0_30px_80px_rgba(4,36,90,0.25)] backdrop-blur-md sm:p-10">
+      <div class="reveal relative z-10 overflow-hidden rounded-[2rem] border border-white bg-white/85 p-6 shadow-[0_30px_80px_rgba(4,36,90,0.25)] backdrop-blur-md sm:p-10">
         <svg class="life-ring pointer-events-none absolute -right-6 -top-8 h-44 w-44 opacity-80 sm:h-56 sm:w-56" viewBox="0 0 120 120" aria-hidden="true">
           <circle cx="60" cy="60" r="42" fill="none" stroke="#ff2d8a" stroke-width="16"></circle>
           <circle cx="60" cy="60" r="42" fill="none" stroke="#ffffff" stroke-width="16" stroke-dasharray="18 48" transform="rotate(12 60 60)"></circle>
@@ -525,6 +526,13 @@
           </p>
         </div>
 
+        <div class="mx-auto mt-8 max-w-[550px]">
+          <blockquote class="twitter-tweet" data-dnt="true" data-theme="light">
+            <p lang="en" dir="ltr">With a heavy heart we must announce that Seal Centre Pieterburen Foundation will likely have to file for bankruptcy within 2 weeks. This threatens to bring an end to our rescue of seals in need, just as the new pup season is about to begin.</p>
+            &mdash; Zeehondencentrum (@Zeehondencreche) <a href="https://x.com/Zeehondencreche/status/2109699787985404067">October 12, 2026</a>
+          </blockquote>
+        </div>
+
         <div class="mt-8 grid gap-4 md:grid-cols-3">
           <article class="reveal lift rounded-3xl bg-foam p-5" style="--d:.05s">
             <p class="font-display text-xl text-sea">Pieterburen</p>
@@ -543,7 +551,7 @@
     </section>
 
     <section id="how-to-buy" class="scroll-mt-28 mx-auto max-w-6xl px-4 pb-8 sm:pb-12">
-      <div class="reveal rounded-[2rem] border border-white bg-white/85 p-6 shadow-[0_30px_80px_rgba(4,36,90,0.25)] backdrop-blur-md sm:p-10">
+      <div class="reveal relative z-10 rounded-[2rem] border border-white bg-white/85 p-6 shadow-[0_30px_80px_rgba(4,36,90,0.25)] backdrop-blur-md sm:p-10">
         <div class="max-w-2xl">
           <p class="text-xs font-extrabold uppercase tracking-[0.22em] text-blush">On Ethereum</p>
           <h2 class="mt-2 font-display text-4xl text-deep sm:text-5xl">How to Buy</h2>
@@ -595,7 +603,7 @@
     </section>
 
     <section id="chart" class="scroll-mt-28 mx-auto max-w-6xl px-4 pb-12 sm:pb-16">
-      <div class="reveal rounded-[2rem] border border-white bg-white/85 p-6 shadow-[0_30px_80px_rgba(4,36,90,0.25)] backdrop-blur-md sm:p-10">
+      <div class="reveal relative z-10 rounded-[2rem] border border-white bg-white/85 p-6 shadow-[0_30px_80px_rgba(4,36,90,0.25)] backdrop-blur-md sm:p-10">
         <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p class="text-xs font-extrabold uppercase tracking-[0.22em] text-blush">Dexscreener</p>
@@ -672,6 +680,7 @@
     </div>
   </footer>
 
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script>
     (function () {
       var ca = (document.body.getAttribute("data-ca") || "TBA").trim();
@@ -732,18 +741,24 @@
         nodes.forEach(function (el) { el.classList.add("show", "settled"); });
         return;
       }
+      function play(el) {
+        el.classList.add("show");
+        el.addEventListener("animationend", function () {
+          el.classList.add("settled");
+        }, { once: true });
+      }
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          var el = entry.target;
-          el.classList.add("show");
-          el.addEventListener("animationend", function () {
-            el.classList.add("settled");
-          }, { once: true });
-          io.unobserve(el);
+          play(entry.target);
+          io.unobserve(entry.target);
         });
       }, { threshold: 0.14, rootMargin: "0px 0px -6% 0px" });
-      nodes.forEach(function (el) { io.observe(el); });
+      nodes.forEach(function (el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) play(el);
+        else io.observe(el);
+      });
     })();
   </script>
 </body>
